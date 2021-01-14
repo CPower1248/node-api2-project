@@ -1,4 +1,5 @@
 module.exports = {
+  // for my machine
   development: {
     client: 'sqlite3',
     connection: { filename: './data/lambda.db3' },
@@ -15,4 +16,14 @@ module.exports = {
       },
     },
   },
+
+  // for heroku
+  production: {
+    client: 'sqlite3',
+    connection: { filename: './data/lambda.db3' },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+  }
 };
